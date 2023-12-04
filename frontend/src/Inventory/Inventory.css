@@ -21,6 +21,10 @@
   width: 50px;
 }
 
+.editimage{
+  width: 20px;
+}
+
 .trashbutton{
   width: 100%;
   background-color: transparent;
@@ -95,4 +99,10 @@ tr:nth-child(even) {
   border-radius: 50px;
   border-color: darkblue !important;
   transition: all 0.3s ease 0s;
+}
+
+.entity{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

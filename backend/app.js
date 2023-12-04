@@ -40,6 +40,7 @@ app.get('/inventory', (req, res) =>{
     knex('item_table')
         .select('*')
         .join('user_table', 'user_table.user_id', 'item_table.userID')
+        .orderBy('item_id', 'desc')
         .then(data => {
             res.status(200).json(data);
         })

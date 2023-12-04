@@ -3,6 +3,7 @@ import { useState, useEffect, useContext } from 'react';
 import { userContext } from '../App';
 import trashbin from './trashbin.png';
 import AddButton from './AddButton';
+import EditButton from './EditButton'
 
 export const Inventory = () => {
   
@@ -40,12 +41,10 @@ export const Inventory = () => {
         <th>Item</th>
         <th>Description</th>
         <th>Quantity</th>
-        <th>Edit</th>
         <th>Delete</th>
       </tr>
 
-       {data.map((data, index) => <tr><td>{data.username}</td><td>{data.item_Name}</td> <td>{data.description}</td> <td>{data.quantity}</td> 
-       <td>Edit</td>
+       {data.map((data, index) => <tr><td>{data.username}</td><td><div className='entity'>{data.item_Name}<span><EditButton id={data.item_id} username={data.username} description={data.description} quantity={data.quantity} selector={"itemName"}/></span></div></td> <td><div className='entity'>{data.description}<span><EditButton id={data.item_id} username={data.username} description={data.description} quantity={data.quantity} selector={"description"}/></span></div></td> <td><div className='entity'>{data.quantity}<span><EditButton id={data.item_id} username={data.username} description={data.description} quantity={data.quantity} selector={"quantity"}/></span></div></td> 
        <td><button onClick={()=> {deleteItem(data.item_id)}} className="trashbutton"><img src={trashbin} alt="trashbin" className='trashimage'></img></button></td> 
        </tr>)} 
     </table>
