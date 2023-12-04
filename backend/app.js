@@ -34,11 +34,12 @@ app.get('/', (req, res) =>{
     res.send(`Application up and running on port ${port}`)
 })
 
-
+//Get Method(Read)
 
 app.get('/inventory', (req, res) =>{
     knex('item_table')
         .select('*')
+        .join('user_table', 'user_table.user_id', 'item_table.item_id')
         .then(data => {
             res.status(200).json(data);
         })
@@ -79,7 +80,7 @@ app.delete('/inventory/:id', function(req,res){
     })
 })
 
-//update Method
+//update Method (Update)
 
 app.put('/inventory/:id', (req,res) =>{
     knex('item_table').where('item_id', req.params.id)
