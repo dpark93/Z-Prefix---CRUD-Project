@@ -33,3 +33,67 @@ app.listen(port, ()=>{
 app.get('/', (req, res) =>{
     res.send(`Application up and running on port ${port}`)
 })
+
+
+
+app.get('/inventory', (req, res) =>{
+    knex('item_table')
+        .select('*')
+        .then(data => {
+            res.status(200).json(data);
+        })
+})
+
+//Add Method (Create)
+
+app.post('/inventory', async(req, res) =>{
+    const maxIdQuery = await knex('item_table').max('item_id as maxId').first()
+
+    await knex('item_table').insert({
+        item_id: maxIdQuery.maxId + 1,
+        userID: req.body.userID,
+        item_Name: req.body.item_Name,
+        description: req.body.description,
+        quantity: req.body.quantity
+    })
+    .then(()=>{
+        knex('item_table')
+        .select('*')
+        .then(data => {
+            res.json(data);
+        })
+    })
+})
+
+//Delete Method (Delete)
+
+app.delete('/inventory/:id', function(req,res){
+    knex('item_table').where('item_id', req.params.id)
+    .del()
+    .then(()=>{
+        knex('item_table')
+        .select('*')
+        .then(data => {
+            res.json(data);
+        })
+    })
+})
+
+//update Method
+
+app.put('/inventory/:id', (req,res) =>{
+    knex('item_table').where('item_id', req.params.id)
+        .update({
+            userID: req.body.userID,
+            item_Name: req.body.item_Name,
+            description: req.body.description,
+            quantity: req.body.quantity
+        })
+        .then(function(){
+            knex('item_table')
+            .select('*')
+            .then(data =>{
+                res.json(data);
+            })
+        })
+})
