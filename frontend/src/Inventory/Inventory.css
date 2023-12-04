@@ -106,3 +106,19 @@ tr:nth-child(even) {
   justify-content: space-between;
   align-items: center;
 }
+
+.detailLink{
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+.descriptionlimit{
+  width: 200px;
+  white-space: nowrap;
+  overflow:hidden;
+  text-overflow: ellipsis;
+
+  padding: 20px;
+  margin: 0;
+  resize:horizontal;
+}
