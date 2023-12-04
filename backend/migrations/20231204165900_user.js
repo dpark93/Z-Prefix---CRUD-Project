@@ -7,6 +7,7 @@ exports.up = function(knex) {
         table.increments('user_id');
         table.string('firstName', 250);
         table.string('lastName', 250);
+        table.string('username', 250);
       })
 };
 

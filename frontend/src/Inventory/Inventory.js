@@ -2,6 +2,7 @@ import './Inventory.css';
 import { useState, useEffect, useContext } from 'react';
 import { userContext } from '../App';
 import trashbin from './trashbin.png';
+import AddButton from './AddButton';
 
 export const Inventory = () => {
   
@@ -15,18 +16,27 @@ export const Inventory = () => {
 
   },[data])
 
-  const deleteBills = (item_id) =>{
+  const deleteItem = (item_id) =>{
     fetch(`http://localhost:8081/inventory/${item_id}`, {
         method: 'DELETE',
       });
   }
 
 
+
+
   return !data ? null : ((
 <>
+
+<div className="addbutton">
+  <AddButton />
+</div>
+
+
 <div className='maintable'>
     <table>
       <tr className='columntitle'>
+        <th>User</th>
         <th>Item</th>
         <th>Description</th>
         <th>Quantity</th>
@@ -34,9 +44,9 @@ export const Inventory = () => {
         <th>Delete</th>
       </tr>
 
-       {data.map((data, index) => <tr><td>{data.item_Name}</td> <td>{data.description}</td> <td>{data.quantity}</td> 
+       {data.map((data, index) => <tr><td>{data.username}</td><td>{data.item_Name}</td> <td>{data.description}</td> <td>{data.quantity}</td> 
        <td>Edit</td>
-       <td><button onClick={()=> {deleteBills(data.item_id)}} className="trashbutton"><img src={trashbin} alt="trashbin" className='trashimage'></img></button></td> 
+       <td><button onClick={()=> {deleteItem(data.item_id)}} className="trashbutton"><img src={trashbin} alt="trashbin" className='trashimage'></img></button></td> 
        </tr>)} 
     </table>
 </div>
