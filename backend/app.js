@@ -46,6 +46,27 @@ app.get('/inventory', (req, res) =>{
         })
 })
 
+app.get('/inventory/byUser/:user', (req, res) =>{
+    var {user} = req.params
+    knex('item_table')
+        .join('user_table', 'user_table.user_id', 'item_table.userID')
+        .whereILike('user_table.username', user.toLowerCase())
+        .then(data => {
+            res.status(200).json(data);
+        })
+})
+
+//Get for users
+app.get('/users', (req, res) =>{
+    knex('user_table')
+        .select('*')
+        .then(data => {
+            res.status(200).json(data);
+        })
+})
+
+
+
 //Add Method (Create)
 
 app.post('/inventory', async(req, res) =>{

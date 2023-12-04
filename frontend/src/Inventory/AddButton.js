@@ -76,7 +76,11 @@ export default function AddButton() {
           </div>
 
           <div className='inputs'>
-          <button onClick={()=> {addItem()}}>Add Bill</button>
+          <button onClick={()=> {
+            if(!userIDinput){
+              alert('Please Select User')
+            } else{
+            addItem()}}}>Add Bill</button>
           </div>
         </div>    
           </PopupBody>

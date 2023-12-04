@@ -8,14 +8,32 @@ import EditButton from './EditButton'
 export const Inventory = () => {
   
   const [data, setData] = useState();
+  const [userdata, setUserData] = useState();
+  const [filter, setFilter] = useState('All');
 
   useEffect(()=> {
+    if(filter == 'All'){
+      Promise.all([     
+         fetch('http://localhost:8081/inventory').then((res) => res.json()),
+         fetch('http://localhost:8081/users').then((res) => res.json()),
+        ])
+        .then(([inventoryData, usersData]) => {
+          setData(inventoryData);
+          setUserData(usersData)
+        })
 
-      fetch('http://localhost:8081/inventory')
-      .then(res => res.json())
-      .then(data => setData(data))
-
+    } else {
+      Promise.all([     
+        fetch(`http://localhost:8081/inventory/byUser/${filter}`).then((res) => res.json()),
+        fetch('http://localhost:8081/users').then((res) => res.json()),
+       ])
+       .then(([inventoryData, usersData]) => {
+         setData(inventoryData);
+         setUserData(usersData)
+       })
+    }
   },[data])
+
 
   const deleteItem = (item_id) =>{
     fetch(`http://localhost:8081/inventory/${item_id}`, {
@@ -24,9 +42,7 @@ export const Inventory = () => {
   }
 
 
-
-
-  return !data ? null : ((
+  return (!data && !userdata) ? null : ((
 <>
 
 <div className="addbutton">
@@ -37,7 +53,12 @@ export const Inventory = () => {
 <div className='maintable'>
     <table>
       <tr className='columntitle'>
-        <th>User</th>
+        <th>
+          <select className='categorySelect' onChange={(e) => {setFilter(e.target.value)}}>
+             <option value="All">All Username</option>
+            {userdata.map((data, index) => <option value={data.username}>{data.username}</option>)}
+          </select>
+        </th>
         <th>Item</th>
         <th>Description</th>
         <th>Quantity</th>
