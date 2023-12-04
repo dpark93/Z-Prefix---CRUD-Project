@@ -4,12 +4,14 @@ import { userContext } from '../App';
 import trashbin from './trashbin.png';
 import AddButton from './AddButton';
 import EditButton from './EditButton'
+import {Link, useNavigate } from 'react-router-dom' ;
 
 export const Inventory = () => {
   
   const [data, setData] = useState();
   const [userdata, setUserData] = useState();
   const [filter, setFilter] = useState('All');
+  const { details, setDetails } = useContext(userContext);
 
   useEffect(()=> {
     if(filter == 'All'){
@@ -65,7 +67,7 @@ export const Inventory = () => {
         <th>Delete</th>
       </tr>
 
-       {data.map((data, index) => <tr><td>{data.username}</td><td><div className='entity'>{data.item_Name}<span><EditButton id={data.item_id} username={data.username} description={data.description} quantity={data.quantity} selector={"itemName"}/></span></div></td> <td><div className='entity'>{data.description}<span><EditButton id={data.item_id} username={data.username} description={data.description} quantity={data.quantity} selector={"description"}/></span></div></td> <td><div className='entity'>{data.quantity}<span><EditButton id={data.item_id} username={data.username} description={data.description} quantity={data.quantity} selector={"quantity"}/></span></div></td> 
+       {data.map((data, index) => <tr><td>{data.username}</td><td><div className='entity'><Link to={`/details/${data.item_id}`} onClick={() => {setDetails(data)}}>{data.item_Name}</Link><span><EditButton id={data.item_id} username={data.username} description={data.description} quantity={data.quantity} selector={"itemName"}/></span></div></td> <td><div className='entity'>{data.description}<span><EditButton id={data.item_id} username={data.username} description={data.description} quantity={data.quantity} selector={"description"}/></span></div></td> <td><div className='entity'>{data.quantity}<span><EditButton id={data.item_id} username={data.username} description={data.description} quantity={data.quantity} selector={"quantity"}/></span></div></td> 
        <td><button onClick={()=> {deleteItem(data.item_id)}} className="trashbutton"><img src={trashbin} alt="trashbin" className='trashimage'></img></button></td> 
        </tr>)} 
     </table>
