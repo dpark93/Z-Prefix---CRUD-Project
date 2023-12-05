@@ -18,3 +18,8 @@
     color: white;
     font-size: smaller;
   }
+
+  .back{
+    cursor: pointer;
+    font-size: 15px;
+  }
