@@ -15,6 +15,8 @@ export const userContext = React.createContext();
 function App() {
 
   const [details, setDetails] = useState();
+  const [userdata, setUserdata] = useState();
+  const [thisuser, setThisuser] = useState();
 
   const {currentUser} = useContext(AuthContext)
 
@@ -31,7 +33,7 @@ function App() {
 
     <div className="App">
 
-    <userContext.Provider value={{details, setDetails}}>
+    <userContext.Provider value={{details, setDetails, userdata, setUserdata, thisuser, setThisuser}}>
     <Routes>
           <Route path='/Login' element={<Login />} />
 

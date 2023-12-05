@@ -13,6 +13,7 @@ export const Inventory = () => {
   const [userdata, setUserData] = useState();
   const [filter, setFilter] = useState('All');
   const { details, setDetails } = useContext(userContext);
+  
 
   useEffect(() => {
     if (filter == 'All') {

@@ -10,9 +10,31 @@ export default function AddButton() {
 
   const [anchor, setAnchor] = useState(null);
   const [item, setItem] = useState();
-  const [userIDinput, setUserIDinput] = useState(1);
+  const [userIDinput, setUserIDinput] = useState(4);
   const [description, setDescription] = useState();
   const [quantity, setQuantity] = useState();
+  const [userInfo, setUserInfo] = useState();
+  const {userdata, setUserdata, thisuser, setThisuser} = useContext(userContext)
+
+
+
+  useEffect(() => {
+    fetch('http://localhost:8081/users')
+        .then(res => res.json())
+        .then(data => {
+          setUserInfo(data);
+          data.forEach(element => {
+            if(element.username.includes(thisuser)){
+              setUserIDinput(element.user_id)
+            } else{
+              setUserIDinput(4)
+            }
+            
+          });
+        })
+}, [])
+
+
 
 
 

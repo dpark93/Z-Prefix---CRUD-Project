@@ -4,6 +4,7 @@ import { signInWithEmailAndPassword  } from "firebase/auth";
 import {auth} from "../firebase"
 import {Link, useNavigate } from 'react-router-dom' ;
 import { AuthContext } from '../context/AuthContext';
+import { userContext } from '../App';
 
 
 export const Login = () => {
@@ -14,6 +15,7 @@ export const Login = () => {
   const navigate = useNavigate()
 
   const {dispatch} = useContext(AuthContext)
+  const {userdata, setUserdata, thisuser, setThisuser} = useContext(userContext)
 
   const handleLogin = (e) =>{
     e.preventDefault();
@@ -22,7 +24,10 @@ export const Login = () => {
     .then((userCredential) => {
       // Signed up 
       const user = userCredential.user;
+      setUserdata(user)
+      setThisuser(user.displayName)
       dispatch({type:"LOGIN", payload:user})
+    
       navigate("/")
       console.log(user)
       // ...
