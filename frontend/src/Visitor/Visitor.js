@@ -46,8 +46,7 @@ export const Visitor = () => {
 
         <div className="nav">
           <div className='links'>
-          <Link to='/' className='NavBar'>Home</Link>
-          <Link to='/Inventory' className='NavBar'>Inventory</Link>
+          <Link to='/Login' className='NavBar'>Login</Link>
           </div>
         </div>
 

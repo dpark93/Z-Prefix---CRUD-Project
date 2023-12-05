@@ -10,7 +10,7 @@ export default function AddButton() {
 
   const [anchor, setAnchor] = useState(null);
   const [item, setItem] = useState();
-  const [userIDinput, setUserIDinput] = useState();
+  const [userIDinput, setUserIDinput] = useState(1);
   const [description, setDescription] = useState();
   const [quantity, setQuantity] = useState();
 
@@ -70,10 +70,6 @@ export default function AddButton() {
           <input name="quantity" type="number" onChange={(e) => { setQuantity(e.target.value)}} value={quantity}></input>
           </div>
 
-          <div className='inputs'>
-          <label for="User">User_ID</label>
-          <input name="User" type="number" onChange={(e) => { setUserIDinput(e.target.value)}} value={userIDinput}></input>
-          </div>
 
           <div className='inputs'>
           <button onClick={()=> {
