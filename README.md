@@ -55,6 +55,7 @@ Functions:
         1) Very simple Details page. This page can potentially include more information with further development. For now its just a more detailed page for each items and back to Inventory button at the top!
 
 
+
 ERD: Only Change that has been made is the password column. Since I am using firebase, there was no need for that column. Everything else is the same
 
 ![Alt text](ERD.png)
