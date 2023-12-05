@@ -47,7 +47,7 @@ export const Inventory = () => {
 
 
   return (!data && !userdata) ? null : ((
-    <>
+    <div className='big-container'>
 
       <div className="nav">
         <div className='links'>
@@ -82,6 +82,6 @@ export const Inventory = () => {
           </tr>)}
         </table>
       </div>
-    </>
+    </div>
   ))
 }

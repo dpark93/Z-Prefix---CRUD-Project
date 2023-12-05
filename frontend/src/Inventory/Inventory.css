@@ -1,10 +1,8 @@
 .big-container{
-  text-align: center;
+  height: 100vh;
+  background-color: #282c34;
 }
 
-.big-container li{
-  list-style: none;
-}
 
 .maintable{
   display: flex;
@@ -47,6 +45,7 @@ td, th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
+  background-color: #ffffffa2;
 }
 
 tr:nth-child(even) {

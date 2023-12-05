@@ -40,17 +40,19 @@ export const Login = () => {
   
 
   return (
-
+<>
     <div className='login'>
+        <div> <p className='welcome'>WELCOME TO INVENTORY TRACKER</p></div>
          <form onSubmit={handleLogin}>
           <input type='email' placeholder='email' onChange={e => setEmail(e.target.value)}/>
           <input type="password"  placeholder='password' onChange={e => setPassword(e.target.value)}/>
           <button type='submit'>Login</button>
           {error && <span>Wrong email or password!</span>}
-          <p>Not a member? <Link to='/Register' className='Register'>Register!</Link></p>
-          <p>Or want to just visit? <Link to='/Visitor' className='backtoLog'>Explore!</Link></p>
+          <p>Not a member? <Link to='/Register' className='register'>Register!</Link></p>
+          <p>Or want to just visit? <Link to='/Visitor' className='register'>Explore!</Link></p>
          </form>
     </div>
 
+</>
   )
 }

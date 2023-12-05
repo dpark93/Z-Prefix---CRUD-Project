@@ -3,14 +3,19 @@
 WELCOME TO INVENTORY APP!!
 DURAND PARK github ID: dpark93
 
+**Normally the api key in the firebase.js would be hidden under .env but to not risk any form of issues during submission it is in the file**
+
+**ONCE YOU LOG IN LOGOUT IS ON THE TOP RIGHT!!!**
+
+
 Functions:
 
     Login Page:
         1) Here you can login or checkout visitor's page without loging in. visitors page won't let you add, edit or delete anything just view and filter by username on the first column
 
         2) if you want to login using provided credential try:
-            email: zprefixadmin@sdi.com
-            password: sdi21dabest
+            email: zprefixadmin@gmail.com
+            password: sdi21rocks
 
         3) even if you try to go to the routes directly it will not let you. for example http://localhost:3000/Inventory, http://localhost:3000/ will redirect you to login page if you haven't logged in.
             **/Details page will error, please do not go there directly. It is a future goal to block that link**
@@ -27,11 +32,11 @@ Functions:
         4) There is back to login link to go back to login page
 
     Main Page:
-        1) You'll see a big welcome message with your username, email and first/last name if you provided the information. the login I provided will not have first/last name so you won't see it
+        1) You'll see a big welcome message with your username, email and first/last name if you provided the information. 
 
         2) At the nav bar you'll see two simple links, One to take you back to Current Main Page and Inventory where FULL CRUD Inventory functionality lives
 
-        3) There is a logout button at the top as well to log you out preventing user from accessing again.
+        3) There is a logout button at the top right as well to log you out preventing user from accessing again.
 
     Inventory Page:
         1) This is a full functioning CRUD APP. When User registers and logs in, the app fetches the username from the postgres database. This means that when you add items, the items will be added under your Username

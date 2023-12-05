@@ -46,7 +46,7 @@
 .nav{
   display: flex;
   justify-content: space-between;
-  align-items: right;
+  align-items: center;
   background-color: white;
 }
 

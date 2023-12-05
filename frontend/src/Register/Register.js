@@ -94,16 +94,16 @@ export const Register = () => {
     return (
 
         <div className='login'>
-
+            <div> <p className='welcome'>Register</p></div>
             <div className='submitRegister'>
                 <input type='email' placeholder='email' onChange={e => setEmail(e.target.value)} />
                 <input type="password" placeholder='password' onChange={e => setPassword(e.target.value)} />
-                <input type="password" placeholder='type password again' onChange={e => {setPasswordtwo(e.target.value); if(e.target.value !== password){setNotSame('Not Same')} else {setNotSame('Correct!')}}} />{same}
+                <input type="password" placeholder='type password again' onChange={e => {setPasswordtwo(e.target.value); if(e.target.value !== password){setNotSame('Not Same')} else {setNotSame('Correct!')}}} /><span>{same}</span>
                 <input type="text" placeholder='Username' onChange={e => setDisplayName(e.target.value)} />
                 <input type="text" placeholder='First Name' onChange={e => setFirstName(e.target.value)} />
                 <input type="text" placeholder='Last Name' onChange={e => setLastName(e.target.value)} />
                 <button type='submit' onClick={() => {handleRegister()}}>Register</button>
-                <p>Back to <Link to='/Login' className='backtoLog'>Login</Link></p>
+                <p>Back to <Link to='/Login' className='register'>Login</Link></p>
             </div>
 
         </div>
