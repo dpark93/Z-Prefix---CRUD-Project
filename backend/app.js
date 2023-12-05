@@ -120,3 +120,36 @@ app.put('/inventory/:id', (req,res) =>{
             })
         })
 })
+
+
+//ADD for users
+app.post('/users', async(req, res) =>{
+    const maxIdQuery = await knex('user_table').max('user_id as maxId').first()
+
+    await knex('user_table').insert({
+        user_id: maxIdQuery.maxId + 1,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        username: req.body.username,
+    })
+    .then(()=>{
+        knex('user_table')
+        .select('*')
+        .then(data => {
+            res.json(data);
+        })
+    })
+})
+
+
+app.delete('/users/:id', function(req,res){
+    knex('user_table').where('user_id', req.params.id)
+    .del()
+    .then(()=>{
+        knex('item_table')
+        .select('*')
+        .then(data => {
+            res.json(data);
+        })
+    })
+})
