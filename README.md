@@ -54,3 +54,9 @@ Functions:
     Details Page:
         1) Very simple Details page. This page can potentially include more information with further development. For now its just a more detailed page for each items and back to Inventory button at the top!
 
+
+ERD: The database did not change much. Only difference is that since I am using firebase, I did not need the password column:
+
+        ![ERD](https://github.com/dpark93/Z-Prefix---CRUD-Project/assets/144705753/5b05d5c8-38c0-4a2e-bb13-0eae72f2c51e)
+
+
