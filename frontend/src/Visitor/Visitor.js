@@ -1,12 +1,9 @@
-import './Inventory.css';
+import './Visitor.css';
 import { useState, useEffect, useContext } from 'react';
 import { userContext } from '../App';
-import trashbin from './trashbin.png';
-import AddButton from './AddButton';
-import EditButton from './EditButton'
 import {Link, useNavigate } from 'react-router-dom' ;
 
-export const Inventory = () => {
+export const Visitor = () => {
   
   const [data, setData] = useState();
   const [userdata, setUserData] = useState();
@@ -54,10 +51,6 @@ export const Inventory = () => {
           </div>
         </div>
 
-<div className="addbutton">
-  <AddButton />
-</div>
-
 
 <div className='maintable'>
     <table>
@@ -71,11 +64,10 @@ export const Inventory = () => {
         <th>Item</th>
         <th>Description</th>
         <th>Quantity</th>
-        <th>Delete</th>
+
       </tr>
 
-       {data.map((data, index) => <tr><td>{data.username}</td><td><div className='entity'><Link to={`/details/${data.item_id}`} onClick={() => {setDetails(data)}}><div className='detailLink'>{data.item_Name}</div></Link><span><EditButton id={data.item_id} username={data.username} description={data.description} quantity={data.quantity} selector={"itemName"}/></span></div></td> <td><div className='entity'><div className='descriptionlimit'>{data.description}</div><span><EditButton id={data.item_id} username={data.username} description={data.description} quantity={data.quantity} selector={"description"}/></span></div></td> <td><div className='entity'>{data.quantity}<span><EditButton id={data.item_id} username={data.username} description={data.description} quantity={data.quantity} selector={"quantity"}/></span></div></td> 
-       <td><button onClick={()=> {deleteItem(data.item_id)}} className="trashbutton"><img src={trashbin} alt="trashbin" className='trashimage'></img></button></td> 
+       {data.map((data, index) => <tr><td>{data.username}</td><td><div className='entity'><Link to={`/details/${data.item_id}`} onClick={() => {setDetails(data)}}><div className='detailLink'>{data.item_Name}</div></Link></div></td> <td><div className='entity'><div className='descriptionlimit'>{data.description}</div></div></td> <td><div className='entity'>{data.quantity}</div></td> 
        </tr>)} 
     </table>
 </div>

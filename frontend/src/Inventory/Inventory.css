@@ -117,6 +117,7 @@ tr:nth-child(even) {
   white-space: nowrap;
   overflow:hidden;
   text-overflow: ellipsis;
+  
 
   padding: 20px;
   margin: 0;

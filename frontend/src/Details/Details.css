@@ -13,3 +13,8 @@
     width: 800px ;
     word-wrap: break-word;
   }
+
+  .linkInDetails{
+    color: white;
+    font-size: smaller;
+  }

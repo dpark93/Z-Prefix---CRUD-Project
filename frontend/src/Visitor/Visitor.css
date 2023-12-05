@@ -1,0 +1,125 @@
+.big-container{
+    text-align: center;
+  }
+  
+  .big-container li{
+    list-style: none;
+  }
+  
+  .maintable{
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+  }
+  
+  .addbutton{
+    margin-top: 3rem;
+  }
+  
+  
+  .trashimage{
+    width: 50px;
+  }
+  
+  .editimage{
+    width: 20px;
+  }
+  
+  .trashbutton{
+    width: 100%;
+    background-color: transparent;
+    border: none;
+  }
+  
+  .trashbutton :hover{
+    background-color: gray;
+  }
+  
+  
+  
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  
+  .columntitle{
+    font-weight: bolder;
+    font-size: larger;
+  }
+  
+  .inputBox{
+    display: flex;
+    align-items: center;
+  }
+  
+  .inputs{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 5px;
+  }
+  
+  .inputs label{
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .categorySelect{
+    appearance: none;
+    border: none;
+    background-color: transparent;
+    font-weight: bold;
+    font-size: medium;
+    text-align: center;
+  
+  
+    color: black !important;
+    text-transform: uppercase;
+    background: rgb(226, 226, 226);
+    border: 2px solid black !important;
+    border-radius: 3px;
+    padding: 1px;
+    display: inline-block;
+    transition: all 0.3s ease 0s;
+  }
+  
+  .categorySelect:hover{
+    color: darkblue !important;
+    border-radius: 50px;
+    border-color: darkblue !important;
+    transition: all 0.3s ease 0s;
+  }
+  
+  .entity{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .detailLink{
+    text-decoration: none;
+    font-weight: bolder;
+  }
+  
+  .descriptionlimit{
+    width: 200px;
+    white-space: nowrap;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    
+  
+    padding: 20px;
+    margin: 0;
+    resize:horizontal;
+  }

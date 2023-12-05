@@ -3,6 +3,7 @@ import { Routes, Route, Link, useNavigate } from 'react-router-dom';
 import { HomePage } from './Home/HomePage';
 import { Inventory } from './Inventory/Inventory';
 import { Details } from './Details/Details';
+import { Visitor } from './Visitor/Visitor';
 import React, { useEffect, useState, useContext, useCallback, createContext } from "react";
 
 export const userContext = React.createContext();
@@ -15,13 +16,6 @@ function App() {
 
   return (
   <>
-        <div className="nav">
-          <div className='links'>
-          <Link to='/' className='NavBar'>Home</Link>
-          <Link to='/Inventory' className='NavBar'>Inventory</Link>
-          </div>
-        </div>
-
 
     <div className="App">
 
@@ -30,6 +24,7 @@ function App() {
           <Route path='/' element={<HomePage />} />
           <Route path='/Inventory' element={<Inventory />} />
           <Route path='/details/:id' element={ <Details item={details} />} />
+          <Route path='/Visitor' element={<Visitor />}/>
     </Routes>
     </userContext.Provider>
 
