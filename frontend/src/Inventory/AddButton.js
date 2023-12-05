@@ -98,7 +98,7 @@ export default function AddButton() {
             if(!userIDinput){
               alert('Please Select User')
             } else{
-            addItem()}}}>Add Bill</button>
+            addItem()}}}>Add Item</button>
           </div>
         </div>    
           </PopupBody>

@@ -10,26 +10,24 @@ import { userContext } from '../App';
 export const HomePage = () => {
 
   const {userdata, setUserdata} = useContext(userContext)
-  const {userdata, setUserdata, thisuser, setThisuser} = useContext(userContext)
+  const {thisuser, setThisuser} = useContext(userContext)
   const [userInfo, setUserInfo] = useState();
   
   useEffect(() => {
     fetch('http://localhost:8081/users')
         .then(res => res.json())
         .then(data => {
-          setUserInfo(data);
           data.forEach(element => {
             if(element.username.includes(thisuser)){
-              setUserIDinput(element.user_id)
+              setUserInfo(element)
             } else{
-              setUserIDinput(4)
+              setUserInfo({})
             }
-            
           });
         })
 }, [])
 
-  return (
+  return !userInfo ? null : ((
     <>
 
       <div className="nav">
@@ -41,9 +39,10 @@ export const HomePage = () => {
       </div>
       <div className='mainpage'>
         <h1>Welcome Back!</h1>
+        <h2>{userInfo.firstName} {userInfo.lastName}</h2>
         <h3>User Name: {userdata.displayName}</h3>
         <h3>Email: {userdata.email}</h3>
       </div>
     </>
-  )
+  ))
 }
