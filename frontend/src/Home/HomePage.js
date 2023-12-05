@@ -40,8 +40,8 @@ export const HomePage = () => {
       <div className='mainpage'>
         <h1>Welcome Back!</h1>
         <h2>{userInfo.firstName} {userInfo.lastName}</h2>
-        <h3>User Name: {userdata.displayName}</h3>
-        <h3>Email: {userdata.email}</h3>
+        <h3>User Name: {!userdata ? 'none' : userdata.displayName}</h3>
+        <h3>Email: {!userdata ? 'none' : userdata.email}</h3>
       </div>
     </>
   ))
