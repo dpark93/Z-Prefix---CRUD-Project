@@ -48,10 +48,24 @@ export const Register = () => {
 
 
     const handleRegister =  (e) => {
+        let existFlag = false;
+
+        userInfo.forEach(element => {
+            if(element.username.includes(displayName)){
+                existFlag = true;
+            } else
+            {
+                existFlag = false;
+            }           
+        });
  
          if ((displayName == null || password == null || email == null || passwordtwo == null) || password !== passwordtwo) {
             alert('Email, Username, and Password is required, Passwords must match!')
         } else {
+
+                    if(existFlag == true){
+                        alert('Username already exists')
+                    } else {
 
                createUserWithEmailAndPassword(auth, email, password, displayName)
                     .then((userCredential) => {
@@ -67,8 +81,8 @@ export const Register = () => {
                         // ..
                     });
                 adduser()
-                navigate("/Login")
-                            
+                navigate("/Login")  
+                }           
         }
     }
 
@@ -88,9 +102,6 @@ export const Register = () => {
             .then((json) => console.log(json));
     }
 
-
-
-
     return (
 
         <div className='login'>
@@ -99,7 +110,7 @@ export const Register = () => {
                 <input type='email' placeholder='email' onChange={e => setEmail(e.target.value)} />
                 <input type="password" placeholder='password' onChange={e => setPassword(e.target.value)} />
                 <input type="password" placeholder='type password again' onChange={e => {setPasswordtwo(e.target.value); if(e.target.value !== password){setNotSame('Not Same')} else {setNotSame('Correct!')}}} /><span>{same}</span>
-                <input type="text" placeholder='Username' onChange={e => setDisplayName(e.target.value)} />
+                <input type="text"  placeholder='Username' onChange={e => setDisplayName(e.target.value)} />
                 <input type="text" placeholder='First Name' onChange={e => setFirstName(e.target.value)} />
                 <input type="text" placeholder='Last Name' onChange={e => setLastName(e.target.value)} />
                 <button type='submit' onClick={() => {handleRegister()}}>Register</button>
