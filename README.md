@@ -59,7 +59,18 @@ IF FOR SOME REASON BOTH OPTIONS DO NOT WORK PLEASE CONTACT
 Durand Park SDI 21 in Slack
 d.park.official@gmail.com
 
-Functions:
+**Functions**
+API
+localhost:8081/users
+localhost:8081//inventory/byUser/:user
+localhost:8081/inventory
+
+APP
+localhost:3000/ - unaccessable until logged in
+localhost:3000/Inventory - unaccessable until logged in
+localhost:3000/Login
+localhost:3000/Visitor
+logalhost:3000/Register
 
     Login Page:
         1) Here you can login or checkout visitor's page without loging in. visitors page won't let you add, edit or delete anything just view and filter by username on the first column
