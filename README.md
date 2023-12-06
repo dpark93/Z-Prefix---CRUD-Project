@@ -7,7 +7,7 @@ DURAND PARK github ID: dpark93
 
 **ONCE YOU LOG IN LOGOUT IS AT THE TOP RIGHT!!!**
 
-
+**Make sure you GIT CLONE this Repo**
 
 **STARTUP:**
 
