@@ -13,6 +13,7 @@
 
   .register{
     color: white;
+    text-decoration: underline;
   }
   
   .login form{

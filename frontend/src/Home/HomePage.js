@@ -1,16 +1,14 @@
 import './HomePage.css';
 import { useState, useEffect, useContext } from 'react';
-import { auth } from "../firebase"
-import { Link, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../context/AuthContext';
+import { Link } from 'react-router-dom';
 import { Logout } from '../Logout/Logout';
 import { userContext } from '../App';
 
 
 export const HomePage = () => {
 
-  const { userdata, setUserdata } = useContext(userContext)
-  const { thisuser, setThisuser } = useContext(userContext)
+  const { userdata } = useContext(userContext)
+  const { thisuser } = useContext(userContext)
   const [userInfo, setUserInfo] = useState();
 
 

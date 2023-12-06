@@ -53,6 +53,8 @@ OPTION 2: Manual set up: !! IF DOCKER COMPOSE UP does not work for some reason y
         go to localhost:3000/ to begin exploring the website!
 
 
+**if you wanna use docker compose again just change in knexfile.js host: '127.0.0.1' under connection to host: 'database' and run docker-compose up --build to rebuild
+
 IF FOR SOME REASON BOTH OPTIONS DO NOT WORK PLEASE CONTACT 
 Durand Park SDI 21 in Slack
 d.park.official@gmail.com
