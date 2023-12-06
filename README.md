@@ -15,9 +15,11 @@ OPTION 1: Docker Compose
 This is the easiest method to start testing the website
 1) Make sure you open up Docker Desktop
 2) In the root folder where docker-compose.yaml exists, just type docker-compose up  || docker-compose up -d if you want it to run in the background
-    **It should build for about 200s or less when you see webpack complete then you can start going to the site
+    **It should build for about 200s or less when you see webpack compiled then you can start going to the site
 3) go to Localhost:8081/users or Localhost:8081/inventory to see if all the seeded datas exist
 4) go to localhost:3000/ to begin exploring the website!
+
+5) when you are finished type docker-compose down --volumes in a new terminal
 
 
 OPTION 2: Manual set up: !! IF DOCKER COMPOSE UP does not work for some reason you can manually set it up to run it

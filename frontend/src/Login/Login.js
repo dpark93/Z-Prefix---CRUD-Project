@@ -48,7 +48,6 @@ export const Login = () => {
   return (
 <>
     <div className='login'>
-        <button onClick={()=>{  localStorage.removeItem("user");}}>test</button>
         <div> <p className='welcome'>WELCOME TO INVENTORY TRACKER</p></div>
          <form onSubmit={handleLogin}>
           <input type='email' placeholder='email' onChange={e => setEmail(e.target.value)}/>
