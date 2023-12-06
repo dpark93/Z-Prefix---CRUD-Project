@@ -24,7 +24,6 @@ export const Register = () => {
     const { dispatch } = useContext(AuthContext)
 
 
-
     useEffect(() => {
         fetch('http://localhost:8081/users')
             .then(res => res.json())
@@ -35,6 +34,7 @@ export const Register = () => {
 
 
     const handleRegister =  (e) => {
+        e.preventDefault()
         let existFlag = false;
 
         userInfo.forEach(element => {
@@ -50,10 +50,11 @@ export const Register = () => {
             alert('All field are required and Passwords must match as well as being longer then 6 characters')
         } else {
 
-                    if(existFlag == true){
+                    if(existFlag === true){
                         alert('Username already exists')
                     } else {
 
+ 
                createUserWithEmailAndPassword(auth, email, password, displayName)
                     .then((userCredential) => {
                         // Signed up 
@@ -69,7 +70,8 @@ export const Register = () => {
                     });
                 adduser()
                 navigate("/Login")  
-                }           
+                }          
+           
         }
     }
 
@@ -101,6 +103,7 @@ export const Register = () => {
 
         <div className='login'>
             <div> <p className='welcome'>Register</p></div>
+            <form onSubmit={handleRegister}>
             <div className='submitRegister'>
                 <input type='email' placeholder='email' onChange={e => setEmail(e.target.value)} />
                 <input type="password" placeholder='password' onChange={e => setPassword(e.target.value)} />
@@ -108,9 +111,10 @@ export const Register = () => {
                 <input type="text"  placeholder='Username' onChange={e => setDisplayName(e.target.value)} onKeyDown={handleKeyDown}  />
                 <input type="text" placeholder='First Name' onChange={e => setFirstName(e.target.value)} />
                 <input type="text" placeholder='Last Name' onChange={e => setLastName(e.target.value)} />
-                <button type='submit' onClick={() => {handleRegister()}}>Register</button>
+                <button type='submit'>Register</button>
                 <p>Back to <Link to='/Login' className='register'>Login</Link></p>
             </div>
+            </form>
 
         </div>
 
