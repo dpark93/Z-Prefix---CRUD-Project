@@ -5,7 +5,7 @@ DURAND PARK github ID: dpark93
 
 **Normally the api key in the firebase.js would be hidden under .env but to not risk any form of issues during submission it is in the file**
 
-**ONCE YOU LOG IN LOGOUT IS ON THE TOP RIGHT!!!**
+**ONCE YOU LOG IN LOGOUT IS AT THE TOP RIGHT!!!**
 
 
 
