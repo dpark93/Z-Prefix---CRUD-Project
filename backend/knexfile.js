@@ -8,7 +8,7 @@ module.exports = {
   development: {
     client: 'pg',
     connection: {
-      host: 'database',
+      host: '127.0.0.1',
       password: 'docker',
       user: 'postgres',
       port: 5432,

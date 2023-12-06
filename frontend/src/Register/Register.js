@@ -28,25 +28,22 @@ export const Register = () => {
         fetch('http://localhost:8081/users')
             .then(res => res.json())
             .then(data => setUserInfo(data))
-    }, [userInfo])
+    }, [])
 
 
 
 
-    const handleRegister =  (e) => {
-        e.preventDefault()
+    const handleRegister = (e) => {
+        e.preventDefault();
         let existFlag = false;
-
+   
         userInfo.forEach(element => {
             if(element.username.includes(displayName)){
                 existFlag = true;
-            } else
-            {
-                existFlag = false;
-            }           
+            }  
         });
  
-         if ((displayName == null || password == null || email == null || passwordtwo == null) || password !== passwordtwo || firstName == null || lastName == null || (password.length && passwordtwo.length < 6)) {
+             if ((displayName == null || password == null || email == null || passwordtwo == null) || password !== passwordtwo || firstName == null || lastName == null || (password.length && passwordtwo.length < 6)) {
             alert('All field are required and Passwords must match as well as being longer then 6 characters')
         } else {
 
@@ -71,7 +68,6 @@ export const Register = () => {
                 adduser()
                 navigate("/Login")  
                 }          
-           
         }
     }
 
@@ -114,8 +110,7 @@ export const Register = () => {
                 <button type='submit'>Register</button>
                 <p>Back to <Link to='/Login' className='register'>Login</Link></p>
             </div>
-            </form>
-
+            </form> 
         </div>
 
     )
