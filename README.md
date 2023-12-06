@@ -59,19 +59,9 @@ IF FOR SOME REASON BOTH OPTIONS DO NOT WORK PLEASE CONTACT
 Durand Park SDI 21 in Slack
 d.park.official@gmail.com
 
-functions:
 
-API:
-1) localhost:8081/users
-2) localhost:8081//inventory/byUser/:user
-3) localhost:8081/inventory
 
-APP
-1) localhost:3000/ - unaccessable until logged in
-2) localhost:3000/Inventory - unaccessable until logged in
-3) localhost:3000/Login
-4) localhost:3000/Visitor
-5) logalhost:3000/Register
+FUNCTIONS:
 
     Login Page:
         1) Here you can login or checkout visitor's page without loging in. visitors page won't let you add, edit or delete anything just view and filter by username on the first column
