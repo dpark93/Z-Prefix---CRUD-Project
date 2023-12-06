@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "db": "knex migrate:rollback && knex migrate:latest && knex seed:run && npm start"
   },
   "author": "",
   "license": "ISC",

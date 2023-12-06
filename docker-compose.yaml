@@ -10,7 +10,8 @@ services:
       - '8081:8081'
 
     volumes:
-      - ./backend:/var/lib/postgresql/back      
+      - ./backend:/var/lib/postgresql/back    
+    command: npm run db
 
   frontend:
     build: frontend/
@@ -31,7 +32,7 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: docker
       POSTGRES_DB: inventory
-      DATABASE_URL: postgres://postgres:docker@backend:5432/budget
+      DATABASE_URL: postgres://postgres:docker@backend:5432/inventory
 
 
     volumes:
