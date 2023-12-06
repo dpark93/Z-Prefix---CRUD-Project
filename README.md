@@ -78,7 +78,9 @@ Functions:
 
         4) There is back to login link to go back to login page
 
-        5) You can't use username that already exists
+        5) You can't use username that already exists. You'll see that if you try to use admin as username and register, it will give you alert since it already exists under credential I provided
+
+        6) You can't have space in username, username input box won't let you press spacebar.
 
     Main Page:
         1) You'll see a welcome message with your username, email and first/last name if you provided the information. 
