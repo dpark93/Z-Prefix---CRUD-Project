@@ -9,17 +9,17 @@ DURAND PARK github ID: dpark93
 
 
 
-STARTUP:
+**STARTUP:**
 
 OPTION 1: Docker Compose
 This is the easiest method to start testing the website
 1) Make sure you open up Docker Desktop
-2) In the root folder where docker-compose.yaml exists, just type docker-compose up  || docker-compose up -d if you want it to run in the background
-    **It should build for about 200s or less when you see webpack compiled then you can start going to the site
-3) go to Localhost:8081/users or Localhost:8081/inventory to see if all the seeded datas exist
+2) In the root folder where docker-compose.yaml exists, just type: docker-compose up  OR  docker-compose up -d if you want it to run in the background
+    **It should build for about 300s or less when you see webpack compiled then you can start going to the site
+3) go to Localhost:8081/users or Localhost:8081/inventory to see if all the seeded data exists
 4) go to localhost:3000/ to begin exploring the website!
 
-5) when you are finished type docker-compose down --volumes in a new terminal
+5) when you are finished type docker-compose down --volumes in a new terminal (and delete all the images :D)
 
 
 OPTION 2: Manual set up: !! IF DOCKER COMPOSE UP does not work for some reason you can manually set it up to run it
@@ -36,17 +36,18 @@ OPTION 2: Manual set up: !! IF DOCKER COMPOSE UP does not work for some reason y
     *exec into your container
 9) inside the container type: psql -U postgres
     *logging into database as postgres user
-10) type: CREATE DATABASE inventory
+10) type: CREATE DATABASE inventory; 
     *overall just creating inventory database in your container
+    *type: \List ; to check if inventory database is actually made
 
-11) back in your vscode terminal cd into backend
-12) type in order: npx knex migrate:latest , npx knex seed:run
+12) back in your vscode terminal cd into backend
+13) type in order: npx knex migrate:latest , npx knex seed:run
     *you should see tables migrate and seeds migrated
-13) in your backend folder type: npm start
-14) open another terminal and cd into frontend
-15) type: npm start
+14) in your backend folder type: npm start
+15) open another terminal and cd into frontend
+16) type: npm start
 
-16) Everything should start up fine!
+17) Everything should start up fine!
         go to Localhost:8081/users or Localhost:8081/inventory to see if all the seeded datas exist
         go to localhost:3000/ to begin exploring the website!
 
