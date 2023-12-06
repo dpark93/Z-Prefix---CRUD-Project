@@ -20,6 +20,8 @@ export const Login = () => {
 
   useEffect(()=>{
     dispatch({type:"LOGOUT"})
+    localStorage.setItem("userInfo", JSON.stringify(null))
+    localStorage.setItem("userdata", JSON.stringify(null))
   },[])
 
   const handleLogin = (e) =>{

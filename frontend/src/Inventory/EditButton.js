@@ -63,7 +63,7 @@ if(props.selector === 'itemName'){
 
                 
             <div className='inputs'>
-            <button onClick={()=> {updateItem(props.id)}}>Update</button>
+            <button onClick={()=> {!item ? alert('please type something') : updateItem(props.id)}}>Update</button>
             </div>
 
           </div>    
@@ -87,7 +87,7 @@ if(props.selector === 'itemName'){
 
                 
             <div className='inputs'>
-            <button onClick={()=> {updateItem(props.id)}}>Update</button>
+            <button onClick={()=> {!description ? alert('please type something') : updateItem(props.id)}}>Update</button>
             </div>
 
           </div>    
@@ -111,7 +111,7 @@ if(props.selector === 'itemName'){
 
                 
             <div className='inputs'>
-            <button onClick={()=> {updateItem(props.id)}}>Update</button>
+            <button onClick={()=> {!quantity ? alert('please type something') : updateItem(props.id)}}>Update</button>
             </div>
 
           </div>    

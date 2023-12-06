@@ -63,8 +63,8 @@ Functions:
         1) Here you can login or checkout visitor's page without loging in. visitors page won't let you add, edit or delete anything just view and filter by username on the first column
 
         2) if you want to login using provided credential try:
-            email: zprefixadmin@gmail.com
-            password: sdi21rocks
+            email: zprefixadmin@sdi.com
+            password: sdi21best
 
         3) even if you try to go to the routes directly it will not let you. for example http://localhost:3000/Inventory, http://localhost:3000/ will redirect you to login page if you haven't logged in.
             **/Details page will error, please do not go there directly. It is a future goal to block that link**
@@ -74,7 +74,7 @@ Functions:
     Register Page:
         1) You can choose to make your own account. This apps authentication is based on firebase and is stored in the firebase database. 
         
-        2) You must provide Email, Password, Password Retype, and Username. Your First Name and Last Name is optional although if you don't provide it it won't show up on main page
+        2) You must provide Email, Password, Password Retype, and Username, first name and last name. Your password must be longer than 6 characters.
 
         3) Once you Click register you'll be redirected to the Login Page to try out your new account!
 
