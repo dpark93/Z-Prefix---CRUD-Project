@@ -110,10 +110,12 @@
   .detailLink{
     text-decoration: none;
     font-weight: bolder;
+    font-size: 20px;
+    width: 200px;
   }
   
   .descriptionlimit{
-    width: 200px;
+    width: 400px;
     white-space: nowrap;
     overflow:hidden;
     text-overflow: ellipsis;

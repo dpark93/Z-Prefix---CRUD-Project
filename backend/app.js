@@ -50,6 +50,7 @@ app.get('/inventory/byUser/:user', (req, res) =>{
     var {user} = req.params
     knex('item_table')
         .join('user_table', 'user_table.user_id', 'item_table.userID')
+        .orderBy('item_id', 'desc')
         .whereILike('user_table.username', user.toLowerCase())
         .then(data => {
             res.status(200).json(data);
