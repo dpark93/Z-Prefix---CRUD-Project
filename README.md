@@ -14,6 +14,7 @@ DURAND PARK github ID: dpark93
 OPTION 1: Docker Compose
 This is the easiest method to start testing the website
 1) Make sure you open up Docker Desktop
+    - you can do docker pull postgres just to be safe, but don't have to
 2) In the root folder where docker-compose.yaml exists, just type: docker-compose up  OR  docker-compose up -d if you want it to run in the background
     **It should build for about 300s or less when you see webpack compiled then you can start going to the site
 3) go to Localhost:8081/users or Localhost:8081/inventory to see if all the seeded data exists
