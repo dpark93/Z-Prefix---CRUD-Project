@@ -83,6 +83,8 @@ Functions:
 
         6) You can't have space in username, username input box won't let you press spacebar.
 
+        SideNote: when you register the username is actually saved to the database as well! when you log in, I compare the login displayName from firebase with postgres users database to set the username for when you add items to the inventory. check with Localhost:8081/users to see if it was added when you registered.
+
     Main Page:
         1) You'll see a welcome message with your username, email and first/last name if you provided the information. 
 
