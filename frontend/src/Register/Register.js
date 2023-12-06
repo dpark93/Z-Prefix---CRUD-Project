@@ -38,7 +38,7 @@ export const Register = () => {
         let existFlag = false;
    
         userInfo.forEach(element => {
-            if(element.username.includes(displayName)){
+            if(element.username.toLowerCase().includes(displayName.toLowerCase())){
                 existFlag = true;
             }  
         });
