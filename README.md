@@ -25,7 +25,7 @@ This is the easiest method to start testing the website
 
 OPTION 2: Manual set up: !! IF DOCKER COMPOSE UP does not work for some reason you can manually set it up to run it
 
-0) !!!cd into backend and inside the knexfile, change the host: 'database' under connection to host: '127.0.0.1'      !!!Make sure to do this!!!
+!!!cd into backend and inside the knexfile, change the host: 'database' under connection to host: '127.0.0.1' !!!Make sure to do this!!!
 1) in the root folder type: npm install
 2) go to backend folder type: npm install
 3) go to frontend folder type: npm install
