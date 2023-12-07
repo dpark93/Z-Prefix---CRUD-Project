@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js",
-    "db": "knex migrate:rollback && knex migrate:latest && knex seed:run && npm start"
+    "db": "npx knex migrate:rollback && npx knex migrate:latest && npx knex seed:run && npm start"
   },
   "author": "",
   "license": "ISC",
