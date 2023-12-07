@@ -91,7 +91,7 @@ FUNCTIONS:
     Register Page:
         1) You can choose to make your own account. This apps authentication is based on firebase and is stored in the firebase database. 
         
-        2) You must provide Email, Password, Password Retype, and Username, first name and last name. Your password must be longer than 6 characters.
+        2) You must provide Email, Password, Password Retype, and Username, first name and last name. Your password must be longer than 6 characters. it will give you warning but please type full email with .com at the end in order for it to work. if you don't have full address, it will register but your account won't be actually be created.
 
         3) Once you Click register you'll be redirected to the Login Page to try out your new account!
 
