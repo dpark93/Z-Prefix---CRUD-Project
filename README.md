@@ -22,6 +22,8 @@ This is the easiest method to start testing the website
 
 5) when you are finished type docker-compose down --volumes in a new terminal (and delete all the images :D)
 
+Warning: if 8081 isn't up or you don't see server has started on port 8081, docker-compose up has failed. so moving onto option 2 is recommended
+
 
 OPTION 2: Manual set up: !! IF DOCKER COMPOSE UP does not work for some reason you can manually set it up to run it
 
