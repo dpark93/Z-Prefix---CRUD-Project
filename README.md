@@ -11,7 +11,7 @@ DURAND PARK github ID: dpark93
 
 **STARTUP:**
 
-OPTION 1: Docker Compose
+OPTION 1: Docker Compose (recommended if you already have wsl 2 and docker desktop installed and connected like SDI)
 This is the easiest method to start testing the website
 1) Make sure you open up Docker Desktop
     - you can do docker pull postgres just to be safe, but don't have to
