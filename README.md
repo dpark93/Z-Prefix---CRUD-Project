@@ -20,7 +20,7 @@ This is the easiest method to start testing the website
 3) go to Localhost:8081/users or Localhost:8081/inventory to see if all the seeded data exists
 4) go to localhost:3000/ to begin exploring the website!
 
-5) when you are finished type docker-compose down --volumes in a new terminal (and delete all the images :D)
+5) when you are finished type docker-compose down --volumes in a new terminal (and delete all the images :D). once you bring it down all accounts created will be deleted 
 
 Warning: if 8081 isn't up or you don't see server has started on port 8081, docker-compose up has failed. so moving onto option 2 is recommended
 
