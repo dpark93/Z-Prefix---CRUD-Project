@@ -65,7 +65,7 @@ d.park.official@gmail.com
 
 API:
 1) localhost:8081/users
-2) localhost:8081//inventory/byUser/:user
+2) localhost:8081/inventory/byUser/:user
 3) localhost:8081/inventory
 
 APP:
