@@ -36,7 +36,7 @@ OPTION 2: Manual set up: !! IF DOCKER COMPOSE UP does not work for some reason y
 6) when pull completes type: docker run --rm --name pg-docker -e POSTGRES_PASSWORD=docker -d -p 5432:5432 postgres
     ** This will run your postgres container
 7) type: docker ps -a , to see your container ID
-8) type: docker exec -it <container ID> bash 
+8) type: docker exec -it <container_id> bash 
     *exec into your container
 9) inside the container type: psql -U postgres
     *logging into database as postgres user
