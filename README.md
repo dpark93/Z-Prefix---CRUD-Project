@@ -33,7 +33,7 @@ OPTION 2: Manual set up: !! IF DOCKER COMPOSE UP does not work for some reason y
 3) go to frontend folder type: npm install
 4) start docker desktop
 5) in your favorite wsl terminal type: docker pull postgres (if you have not already done this before)
-6) when pull completes type: docker run --rm --name pg-docker -e POSTGRES_PASSWORD=docker -d -p 5432:5432 -v $HOME/docker/volumes/postgres:/var/lib/postgresql/data postgres
+6) when pull completes type: docker run --rm --name pg-docker -e POSTGRES_PASSWORD=docker -d -p 5432:5432 postgres
     ** This will run your postgres container
 7) type: docker ps -a , to see your container ID
 8) type: docker exec -it <container ID> bash 
