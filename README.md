@@ -13,6 +13,7 @@ DURAND PARK github ID: dpark93
 
 OPTION 1: Docker Compose (recommended if you already have wsl 2 and docker desktop installed and connected like SDI)
 This is the easiest method to start testing the website
+
 1) Make sure you open up Docker Desktop
     - type: docker pull postgres, I believe docker compose will automatically pull the image but it doesn't hurt to do it beforehand
 2) In the root folder where docker-compose.yaml exists, just type: docker-compose up  OR  docker-compose up -d if you want it to run in the background
@@ -28,13 +29,17 @@ Warning: if 8081 isn't up or you don't see server has started on port 8081, dock
 OPTION 2: Manual set up: !! IF DOCKER COMPOSE UP does not work for some reason you can manually set it up to run it
 
 !!!cd into backend and inside the knexfile, change the host: 'database' under connection to host: '127.0.0.1' !!!Make sure to do this!!!
+
 1) in the root folder type: npm install
 2) go to backend folder type: npm install
 3) go to frontend folder type: npm install
 4) start docker desktop
 5) in your favorite wsl terminal type: docker pull postgres (if you have not already done this before)
-6) when pull completes type: docker run --rm --name pg-docker -e POSTGRES_PASSWORD=docker -d -p 5432:5432 -v $HOME/docker/volumes/postgres:/var/lib/postgresql/data postgres
-    ** This will run your postgres container
+
+6) to make some volume create a folder by typeing: mkdir -p $HOME/docker/volumes/postgres
+then type : docker run --rm --name pg-docker -e POSTGRES_PASSWORD=docker -d -p 5432:5432 -v $HOME/docker/volumes/postgres:/var/lib/postgresql/data postgres
+this will run your container in that volume
+
 7) type: docker ps -a , to see your container ID
 8) type: docker exec -it <container ID> bash 
     *exec into your container
@@ -62,6 +67,8 @@ IF FOR SOME REASON BOTH OPTIONS DO NOT WORK PLEASE CONTACT
 Durand Park SDI 21 in Slack
 d.park.official@gmail.com
 
+docker rm -rf to delete containers
+docker rmi to delete images
 
 API:
 1) localhost:8081/users
