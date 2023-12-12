@@ -41,7 +41,7 @@ then type : docker run --rm --name pg-docker -e POSTGRES_PASSWORD=docker -d -p 5
 this will run your container in that volume
 
 7) type: docker ps -a , to see your container ID
-8) type: docker exec -it <container ID> bash 
+8) type: docker exec -it <container_id> bash 
     *exec into your container
 9) inside the container type: psql -U postgres
     *logging into database as postgres user
@@ -72,7 +72,7 @@ docker rmi to delete images
 
 API:
 1) localhost:8081/users
-2) localhost:8081//inventory/byUser/:user
+2) localhost:8081/inventory/byUser/:user
 3) localhost:8081/inventory
 
 APP:
