@@ -67,7 +67,7 @@ IF FOR SOME REASON BOTH OPTIONS DO NOT WORK PLEASE CONTACT
 Durand Park SDI 21 in Slack
 d.park.official@gmail.com
 
-docker rm -rf to delete containers
+docker rm -f to delete containers
 docker rmi to delete images
 
 API:
